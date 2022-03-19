@@ -1,0 +1,26 @@
+syntax = "proto3";
+
+option go_package = "github.com/hw/pkg/proto/hw";
+
+package hw;
+
+
+service Mafia {
+  rpc AuthLogin (AuthReq) returns (AuthResp) {}
+  rpc GetUsers (GetUsersReq) returns (GetUsersResp) {}
+}
+
+message AuthReq {
+  string name = 1;
+}
+
+message AuthResp {
+  string info = 1;
+}
+
+message GetUsersReq {
+
+}
+message GetUsersResp {
+  repeated string users = 1;
+}
